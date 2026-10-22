@@ -31,3 +31,14 @@ build/
 
 ### VS Code ###
 .vscode/
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Build output
+target/
+
+# User uploads
+uploads/
+
