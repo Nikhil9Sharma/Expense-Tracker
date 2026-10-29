@@ -25,7 +25,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     Boolean existsByEmail(String email);
 
-    @Query(value = "SELECT * from users u " +
+    @Query
+    (value = "SELECT * from users u " +
             "JOIN user_roles ur ON u.id = ur.user_id " +
             "WHERE ur.role_id = :roleId AND (u.username LIKE %:keyword% OR u.email LIKE %:keyword%)", nativeQuery = true)
     Page<User> findAll(Pageable pageable, @Param("roleId") int roleId, @Param("keyword") String keyword);

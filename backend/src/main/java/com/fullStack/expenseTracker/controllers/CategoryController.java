@@ -23,7 +23,7 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
     @Autowired
-    private TransactionTypeService transactionTypeService;
+    // private TransactionTypeService transactionTypeService;
 
     @GetMapping("/getAll")
     @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
