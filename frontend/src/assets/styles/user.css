@@ -19,7 +19,7 @@
 .t-form input:not([type='submit']) {
     background-color: var(--hover);
     border: none;
-    padding: 10px; 
+    padding: 10px;
     color: var(--text);
 }
 .t-form .radio {

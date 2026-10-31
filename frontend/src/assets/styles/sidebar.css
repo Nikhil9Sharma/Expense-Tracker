@@ -4,7 +4,8 @@
     transition: 0.5s;
     border-right: 2px solid var(--hover);
     position: fixed;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     z-index: 2;
     background-color: var(--third);
     min-height: 100vh;
@@ -22,8 +23,8 @@
     margin-bottom: 5px;
     padding: 20px;
     border-bottom: 2px solid var(--hover);cursor: pointer;
-    border-radius: 3px;   
-    color: var(--second); 
+    border-radius: 3px;
+    color: var(--second);
 }
 .user-panel .side-bar ul li:hover {
     background-color: var(--hover);

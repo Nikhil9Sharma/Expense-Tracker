@@ -3,8 +3,8 @@ import API_BASE_URL from "./auth.config";
 
 const register_req = async (username, email, password) => {
   return await axios.post(API_BASE_URL + '/auth/signup', {
-      userName: username, 
-      email: email, 
+      userName: username,
+      email: email,
       password: password
   })
 }

@@ -10,15 +10,12 @@ import Logo from '../utils/Logo';
 function Sidebar({ activeNavId }) {
 
     const [isSideBarOpen, setIsSideBarOpen] = useState(false);
-
     const navigate = useNavigate();
-
     const logout = () => {
         AuthService.logout_req();
         navigate('/')
         window.location.reload()
     }
-
     return (
         <div className={(isSideBarOpen) ? "side-bar open" : "side-bar"}>
             <div style={{ padding: '15px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -26,7 +23,6 @@ function Sidebar({ activeNavId }) {
                 <span onClick={() => setIsSideBarOpen(false)} className='mobile'><i className="fa fa-times" aria-hidden='true'></i></span>
                 <span onClick={() => setIsSideBarOpen(true)} className='mobile menu'><i className="fa fa-bars" aria-hidden='true'></i></span>
             </div>
-
             <ul>
                 {
                     SideBarLinks
@@ -47,9 +43,7 @@ function Sidebar({ activeNavId }) {
                 <span onClick={logout}><Link className='nav-link'><li><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</li></Link></span>
             </ul>
             <AuthVerify logOut={logout}/>
-
         </div>
     )
 }
-
 export default Sidebar;
