@@ -14,7 +14,7 @@ const get_categories = () => {
 
 const add_transaction = (email, categoryId, descripiton, amount, date) => {
     return axios.post(
-        API_BASE_URL + '/transaction/new', 
+        API_BASE_URL + '/transaction/new',
         {
             userEmail: email,
             categoryId: categoryId,
@@ -71,9 +71,9 @@ const update_transaction = (transactionId, email, categoryId, descripiton, amoun
 
 const delete_transaction = (id) => {
     return axios.delete(
-        API_BASE_URL + '/transaction/delete', 
+        API_BASE_URL + '/transaction/delete',
         {
-            headers: AuthService.authHeader(), 
+            headers: AuthService.authHeader(),
             params: {
                 transactionId: id
             }
@@ -83,19 +83,19 @@ const delete_transaction = (id) => {
 
 const settingsResetPassword = async (email, oldPassword, newpassword) => {
     return await axios.post(API_BASE_URL + '/user/settings/changePassword', {
-        email: email, 
+        email: email,
         currentPassword: oldPassword,
         newPassword: newpassword
     }, {
-      headers: AuthService.authHeader(),
+    headers: AuthService.authHeader(),
     })
 }
 
 const getTotalIncomeOrExpense = async (userId, transactionTypeId, month, year) => {
     return axios.get(
-        API_BASE_URL + '/report/getTotalIncomeOrExpense', 
+        API_BASE_URL + '/report/getTotalIncomeOrExpense',
         {
-            headers: AuthService.authHeader(), 
+            headers: AuthService.authHeader(),
             params: {
                 userId: userId,
                 transactionTypeId: transactionTypeId,
@@ -108,9 +108,9 @@ const getTotalIncomeOrExpense = async (userId, transactionTypeId, month, year) =
 
 const getTotalNoOfTransactions = async (userId, month, year) => {
     return axios.get(
-        API_BASE_URL + '/report/getTotalNoOfTransactions', 
+        API_BASE_URL + '/report/getTotalNoOfTransactions',
         {
-            headers: AuthService.authHeader(), 
+            headers: AuthService.authHeader(),
             params: {
                 userId: userId,
                 month: month,
@@ -122,9 +122,9 @@ const getTotalNoOfTransactions = async (userId, month, year) => {
 
 const getTotalByCategory = async (email, categoryId, month, year) => {
     return await axios.get(
-        API_BASE_URL + '/report/getTotalByCategory', 
+        API_BASE_URL + '/report/getTotalByCategory',
         {
-            headers: AuthService.authHeader(), 
+            headers: AuthService.authHeader(),
             params: {
                 email: email,
                 categoryId: categoryId,
